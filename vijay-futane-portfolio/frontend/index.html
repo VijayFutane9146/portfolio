@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO & Social Meta Tags -->
+  <title>Vijay Futane | Python Full Stack Developer &amp; Data Analyst</title>
+  <meta name="description" content="Portfolio of Vijay Futane - Python Full Stack Developer and Data Analyst with an MCA degree. Specializing in React, Flask, MySQL, Power BI, and scalable REST APIs." />
+  <meta name="keywords" content="Vijay Futane, Python Full Stack Developer, Data Analyst, MCA, React, Flask, MySQL, Power BI, SQL, Portfolio" />
+  <meta name="author" content="Vijay Futane" />
+  
+  <!-- Open Graph / LinkedIn / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vijay Futane | Python Full Stack Developer &amp; Data Analyst" />
+  <meta property="og:description" content="Professional developer portfolio featuring full stack applications, interactive analytics dashboards, and MySQL architectures." />
+  <meta property="og:image" content="assets/images/profile-avatar.svg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/profile-avatar.svg" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#a855f7',
+              violet: '#8b5cf6',
+              cyan: '#06b6d4',
+              navy: '#0b0f19',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Custom Glassmorphism Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-[#070913] text-slate-100 antialiased">
+  <!-- React Root Container -->
+  <div id="root"></div>
+
+  <!-- React 18 and Babel CDN Dependencies -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Client-side API & Utility Scripts -->
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/utils.js"></script>
+
+  <!-- Reusable React Components (Transpiled by Babel) -->
+  <script type="text/babel" src="components/Navbar.js"></script>
+  <script type="text/babel" src="components/Hero.js"></script>
+  <script type="text/babel" src="components/About.js"></script>
+  <script type="text/babel" src="components/Skills.js"></script>
+  <script type="text/babel" src="components/ProjectModal.js"></script>
+  <script type="text/babel" src="components/Projects.js"></script>
+  <script type="text/babel" src="components/Experience.js"></script>
+  <script type="text/babel" src="components/Contact.js"></script>
+  <script type="text/babel" src="components/Toast.js"></script>
+  <script type="text/babel" src="components/BackToTop.js"></script>
+  <script type="text/babel" src="components/Footer.js"></script>
+
+  <!-- React Pages -->
+  <script type="text/babel" src="pages/HomePage.js"></script>
+  <script type="text/babel" src="pages/AdminLogin.js"></script>
+  <script type="text/babel" src="pages/AdminDashboard.js"></script>
+
+  <!-- Main React App Entry -->
+  <script type="text/babel" src="assets/js/app.js"></script>
+</body>
+</html>

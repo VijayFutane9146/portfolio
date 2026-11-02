@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="tblGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(30, 41, 59, 0.95)"/>
+      <stop offset="100%" stop-color="rgba(15, 23, 42, 0.98)"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="380" rx="16" fill="url(#bgGrad4)"/>
+
+  <!-- Window Bar -->
+  <rect x="0" y="0" width="600" height="42" fill="#0f172a" rx="16"/>
+  <circle cx="28" cy="21" r="6" fill="#ef4444"/>
+  <circle cx="48" cy="21" r="6" fill="#f59e0b"/>
+  <circle cx="68" cy="21" r="6" fill="#10b981"/>
+  <text x="300" y="26" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" text-anchor="middle">Enterprise HR Relational Schema &amp; Audit Triggers</text>
+
+  <!-- Left Table: Employees -->
+  <g transform="translate(30, 65)">
+    <rect width="240" height="200" rx="8" fill="url(#tblGrad)" stroke="rgba(56, 189, 248, 0.3)"/>
+    <rect width="240" height="32" rx="8" fill="#1e293b"/>
+    <text x="12" y="22" fill="#38bdf8" font-family="'Fira Code', monospace" font-size="11" font-weight="bold">TABLE: employees</text>
+    <text x="210" y="22" fill="#a855f7" font-size="10">PK</text>
+    
+    <text x="14" y="55" fill="#f8fafc" font-family="'Fira Code', monospace" font-size="10">emp_id INT (PK)</text>
+    <text x="14" y="80" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="10">first_name VARCHAR(50)</text>
+    <text x="14" y="105" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="10">dept_id INT (FK)</text>
+    <text x="14" y="130" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="10">salary DECIMAL(10,2)</text>
+    <text x="14" y="155" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="10">hire_date DATE</text>
+    <text x="14" y="180" fill="#34d399" font-family="'Fira Code', monospace" font-size="10">INDEX (dept_id, salary)</text>
+  </g>
+
+  <!-- Right Table: Departments -->
+  <g transform="translate(340, 65)">
+    <rect width="230" height="130" rx="8" fill="url(#tblGrad)" stroke="rgba(168, 85, 247, 0.3)"/>
+    <rect width="230" height="32" rx="8" fill="#2e1065"/>
+    <text x="12" y="22" fill="#c084fc" font-family="'Fira Code', monospace" font-size="11" font-weight="bold">TABLE: departments</text>
+    
+    <text x="14" y="55" fill="#f8fafc" font-family="'Fira Code', monospace" font-size="10">dept_id INT (PK)</text>
+    <text x="14" y="80" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="10">dept_name VARCHAR(100)</text>
+    <text x="14" y="105" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="10">budget DECIMAL(12,2)</text>
+  </g>
+
+  <!-- Relational Connector Line (dept_id FK to PK) -->
+  <path d="M 270 170 C 310 170, 310 120, 340 120" fill="none" stroke="#a855f7" stroke-width="2.5" stroke-dasharray="3"/>
+  <circle cx="270" cy="170" r="4" fill="#a855f7"/>
+  <polygon points="340,120 334,116 334,124" fill="#a855f7"/>
+
+  <!-- Bottom SQL Query Optimizer Console -->
+  <g transform="translate(30, 275)">
+    <rect width="540" height="85" rx="8" fill="#020617" stroke="#1e293b"/>
+    <text x="14" y="22" fill="#10b981" font-family="'Fira Code', monospace" font-size="11">-- Stored Procedure: sp_CalculateDepartmentSalaryAudit()</text>
+    <text x="14" y="44" fill="#38bdf8" font-family="'Fira Code', monospace" font-size="10">SELECT d.dept_name, COUNT(e.emp_id) as headcount, AVG(e.salary) as avg_sal</text>
+    <text x="14" y="66" fill="#fcd34d" font-family="'Fira Code', monospace" font-size="10">FROM departments d JOIN employees e ON d.dept_id = e.dept_id GROUP BY d.dept_id;</text>
+  </g>
+</svg>
